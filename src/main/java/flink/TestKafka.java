@@ -19,7 +19,7 @@ public class TestKafka {
                 "'properties.group.id' = 'testGroup_1'," +
                 "'properties.enable.auto.commit'='false'," +
                 "'topic'='flink-test'," +
-                "'properties.bootstrap.servers'='localhost:9092'," +
+                "'properties.bootstrap.servers'='10.0.88.94:9092'," +
                 "'scan.startup.mode'='earliest-offset'," +
                 "'format'='json')");
         tableEnv.executeSql("CREATE TABLE user_log_mysql (" +
@@ -37,7 +37,7 @@ public class TestKafka {
                 "'connector.write.flush.max-rows' = '1' " +
                 " )");
 
-        tableEnv.executeSql("INSERT INTO user_log_mysql select * from  user_log");
+        tableEnv.executeSql("INSERT INTO user_log_mysql select *from  user_log");
     }
 
 }
