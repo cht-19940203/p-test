@@ -19,7 +19,7 @@ public class TestKafka {
                 "'properties.group.id' = 'testGroup_1'," +
                 "'properties.enable.auto.commit'='false'," +
                 "'topic'='flink-test'," +
-                "'properties.bootstrap.servers'='10.0.88.94:9092'," +
+                "'properties.bootstrap.servers'='10.88.102.94:9092'," +
                 "'scan.startup.mode'='earliest-offset'," +
                 "'format'='json')");
         tableEnv.executeSql("CREATE TABLE user_log_mysql (" +
