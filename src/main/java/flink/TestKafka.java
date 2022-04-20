@@ -5,6 +5,7 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
 public class TestKafka {
 
+
     public static void main(String[] args) {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
@@ -16,9 +17,8 @@ public class TestKafka {
                 "ts varchar)" +
                 "with(" +
                 "'connector'='kafka'," +
-                "'properties.group.id' = 'testGroup_1'," +
-                "'properties.enable.auto.commit'='false'," +
                 "'topic'='flink-test'," +
+                "'properties.group.id' = 'testGroup_1'," +
                 "'properties.bootstrap.servers'='10.88.102.94:9092'," +
                 "'scan.startup.mode'='earliest-offset'," +
                 "'format'='json')");
