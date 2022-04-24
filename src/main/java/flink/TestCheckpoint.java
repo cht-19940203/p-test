@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TestCheckpoint {
 
     public static void main(String[] args) throws Exception {
-        StreamExecutionEnvironment environment = StreamExecutionEnvironment.createLocalEnvironment();
+        StreamExecutionEnvironment environment = StreamExecutionEnvironment.getExecutionEnvironment();
         environment.setParallelism(1);
         environment.enableCheckpointing(10000);
         CheckpointConfig checkpointConfig = environment.getCheckpointConfig();
