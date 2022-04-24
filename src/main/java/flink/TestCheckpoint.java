@@ -12,14 +12,11 @@ import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.source.RichParallelSourceFunction;
 
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestCheckpoint {
 
     public static void main(String[] args) throws Exception {
-
-        CountDownLatch latch = new CountDownLatch(1);
         StreamExecutionEnvironment environment = StreamExecutionEnvironment.createLocalEnvironment();
         environment.setParallelism(1);
         environment.enableCheckpointing(10000);
@@ -35,8 +32,6 @@ public class TestCheckpoint {
                 .print()
                 .uid("print-sink");
         environment.execute("job-20220424-1");
-
-        latch.await();
     }
 
 
