@@ -29,7 +29,6 @@ public class TestWord {
                 .reduce((ReduceFunction<WordWithCount>) (a, b) -> new WordWithCount(a.word, a.count + b.count));
         windowCounts.print().setParallelism(1);
         env.execute("Socket Window WordCount");
-
     }
 
     public static class WordWithCount {
